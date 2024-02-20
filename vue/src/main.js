@@ -4,5 +4,8 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./route.js";
 import axios from "axios";
+import store from "./store/index.js";
+import './assets/base.css';
+import './assets/script.js';
 
-createApp(App).use(router).mount("#app");
+createApp(App).use(store).use(router).mount("#app");
