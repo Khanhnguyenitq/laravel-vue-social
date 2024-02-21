@@ -1,11 +1,5 @@
 <template>
     <div>
-        <!-- loader Start -->
-        <!-- <div id="loading">
-            <div id="loading-center"></div>
-        </div> -->
-        <!-- loader END -->
-
         <div class="wrapper">
             <section class="sign-in-page">
                 <div id="container-inside">
@@ -19,7 +13,7 @@
                     <div class="row no-gutters">
                         <div class="col-md-6 text-center pt-5">
                             <div class="sign-in-detail text-white">
-                                <a class="sign-in-logo mb-5" href="#"
+                                <a class="sign-in-logo mb-5" href="index.html"
                                     ><img
                                         src="../assets/images/logo-full.png"
                                         class="img-fluid"
@@ -35,7 +29,6 @@
                                                 src="../assets/images/login/1.png"
                                                 class="img-fluid mb-4"
                                                 alt="logo"
-                                                loading="lazy"
                                             />
                                             <h4 class="mb-1 text-white">
                                                 Find new friends
@@ -82,26 +75,40 @@
                         </div>
                         <div class="col-md-6 bg-white pt-5 pt-5 pb-lg-0 pb-5">
                             <div class="sign-in-from">
-                                <h1 class="mb-0">Sign in</h1>
+                                <h1 class="mb-0">Sign Up</h1>
                                 <p>
                                     Enter your email address and password to
                                     access admin panel.
                                 </p>
                                 <form
                                     class="mt-4"
-                                    @submit.prevent="login"
+                                    @submit.prevent="register"
                                     method="post"
                                 >
                                     <div class="form-group">
                                         <label
                                             class="form-label"
-                                            for="exampleInputEmail1"
+                                            for="exampleInput0"
+                                            >Name</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control mb-0"
+                                            id="exampleInput0"
+                                            placeholder="Enter name"
+                                            v-model="user.name"
+                                        />
+                                    </div>
+                                    <div class="form-group">
+                                        <label
+                                            class="form-label"
+                                            for="exampleInputEmail2"
                                             >Email address</label
                                         >
                                         <input
                                             type="email"
                                             class="form-control mb-0"
-                                            id="exampleInputEmail1"
+                                            id="exampleInputEmail2"
                                             placeholder="Enter email"
                                             v-model="user.email"
                                         />
@@ -112,17 +119,26 @@
                                             for="exampleInputPassword1"
                                             >Password</label
                                         >
-                                        <a
-                                            href="pages-recoverpw.html"
-                                            class="float-end"
-                                            >Forgot password?</a
-                                        >
                                         <input
                                             type="password"
                                             class="form-control mb-0"
                                             id="exampleInputPassword1"
                                             placeholder="Password"
                                             v-model="user.password"
+                                        />
+                                    </div>
+                                    <div class="form-group">
+                                        <label
+                                            class="form-label"
+                                            for="exampleInputPassword2"
+                                            >Password Confirm</label
+                                        >
+                                        <input
+                                            type="password"
+                                            class="form-control mb-0"
+                                            id="exampleInputPassword2"
+                                            placeholder="Password Confirm"
+                                            v-model="user.password_confirmation"
                                         />
                                     </div>
                                     <div class="d-inline-block w-100">
@@ -132,27 +148,30 @@
                                             <input
                                                 type="checkbox"
                                                 class="form-check-input"
-                                                id="customCheck11"
+                                                id="customCheck1"
                                             />
                                             <label
                                                 class="form-check-label"
-                                                for="customCheck11"
-                                                >Remember Me</label
+                                                for="customCheck1"
+                                                >I accept
+                                                <a href="#"
+                                                    >Terms and Conditions</a
+                                                ></label
                                             >
                                         </div>
                                         <button
                                             type="submit"
                                             class="btn btn-primary float-end"
                                         >
-                                            Sign in
+                                            Sign Up
                                         </button>
                                     </div>
                                     <div class="sign-info">
                                         <span
                                             class="dark-color d-inline-block line-height-2"
-                                            >Don't have an account?
-                                            <a href="sign-up.html"
-                                                >Sign up</a
+                                            >Already Have Account ?
+                                            <a href="sign-in.html"
+                                                >Log In</a
                                             ></span
                                         >
                                         <ul class="iq-social-media">
@@ -223,20 +242,21 @@ import router from "../../route.js";
 let errorMsg = ref("");
 
 const user = reactive({
+    name: "",
     email: "",
     password: "",
+    password_confirmation: "",
 });
 
-function login() {
+function register() {
     store
-        .dispatch("login", user)
+        .dispatch("register", user)
         .then(() => {
-            router.push({ name: "home" });
+            router.push({ name: "login" });
         })
         .catch(({ response }) => {
             errorMsg.value = response.data.message;
             console.log(errorMsg.value);
-
         });
 }
 </script>

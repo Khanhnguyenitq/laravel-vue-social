@@ -19,9 +19,22 @@ const store = createStore({
         },
     },
     actions: {
+        async register({ commit }, credentials) {
+            try {
+                const response = await axiosClient.post("/register", credentials);
+                const { user, token } = response.data;
+                commit("SET_USER", user);
+                commit("SET_TOKEN", token);
+            } catch (error) {
+                console.error("Registration failed:", error);
+                throw error;
+            }
+        },
+
         async login({ commit }, credentials) {
             try {
                 const response = await axiosClient.post("/login", credentials);
+                console.log(response);
                 const { user, token } = response.data;
                 commit("SET_USER", user);
                 commit("SET_TOKEN", token);
