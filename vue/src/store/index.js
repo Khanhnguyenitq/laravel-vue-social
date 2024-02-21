@@ -12,6 +12,7 @@ const store = createStore({
         },
         SET_TOKEN(state, token) {
             state.token = token;
+            sessionStorage.setItem('TOKEN', token);
         },
         LOGOUT(state) {
             state.user = null;
@@ -21,7 +22,10 @@ const store = createStore({
     actions: {
         async register({ commit }, credentials) {
             try {
-                const response = await axiosClient.post("/register", credentials);
+                const response = await axiosClient.post(
+                    "/register",
+                    credentials
+                );
                 const { user, token } = response.data;
                 commit("SET_USER", user);
                 commit("SET_TOKEN", token);
@@ -34,10 +38,11 @@ const store = createStore({
         async login({ commit }, credentials) {
             try {
                 const response = await axiosClient.post("/login", credentials);
-                console.log(response);
-                const { user, token } = response.data;
+                const { user, access_token } = response.data;
+                console.log(response.data);
+                console.log(access_token);
                 commit("SET_USER", user);
-                commit("SET_TOKEN", token);
+                commit("SET_TOKEN", access_token);
             } catch (error) {
                 console.error("Lỗi đăng nhập:", error);
                 throw error;
