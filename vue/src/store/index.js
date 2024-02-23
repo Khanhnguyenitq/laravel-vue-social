@@ -4,7 +4,7 @@ import axiosClient from "../axios.js";
 const store = createStore({
     state: {
         user: null,
-        token: null,
+        token: sessionStorage.getItem("TOKEN"),
     },
     mutations: {
         SET_USER(state, user) {
@@ -12,7 +12,11 @@ const store = createStore({
         },
         SET_TOKEN(state, token) {
             state.token = token;
-            sessionStorage.setItem('TOKEN', token);
+            if (token) {
+                sessionStorage.setItem("TOKEN", token);
+            } else {
+                sessionStorage.removeItem("TOKEN");
+            }
         },
         LOGOUT(state) {
             state.user = null;
@@ -39,8 +43,6 @@ const store = createStore({
             try {
                 const response = await axiosClient.post("/login", credentials);
                 const { user, access_token } = response.data;
-                console.log(response.data);
-                console.log(access_token);
                 commit("SET_USER", user);
                 commit("SET_TOKEN", access_token);
             } catch (error) {

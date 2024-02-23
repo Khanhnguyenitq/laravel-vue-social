@@ -3,7 +3,7 @@ import store from "./store";
 import router from "./route.js";
 
 const axiosClient = axios.create({
-    baseURL: "http://127.0.0.1:8000/api",
+    baseURL: "http://laravel-social-media.test:8080/api",
 });
 
 axiosClient.interceptors.request.use((config) => {
