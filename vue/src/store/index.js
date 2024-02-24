@@ -3,7 +3,7 @@ import axiosClient from "../axios.js";
 
 const store = createStore({
     state: {
-        user: null,
+        user: {},
         token: sessionStorage.getItem("TOKEN"),
     },
     mutations: {
@@ -47,6 +47,16 @@ const store = createStore({
                 commit("SET_TOKEN", access_token);
             } catch (error) {
                 console.error("Lỗi đăng nhập:", error);
+                throw error;
+            }
+        },
+
+        async getUser({ commit }, dataUser) {
+            try {
+                const response = await axiosClient.get("/user", dataUser);
+                const { data } = response.data;
+                commit("SET_USER", data);
+            } catch (error) {
                 throw error;
             }
         },

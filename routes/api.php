@@ -15,8 +15,8 @@ use App\Http\Controllers\Api\AuthController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware(['auth:api'])->group(function () {
+    Route::get('/user', [AuthController::class, 'getUser']);
 });
 
 Route::post('login', [AuthController::class, 'login']);

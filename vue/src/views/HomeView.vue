@@ -1416,7 +1416,9 @@
                                 loading="lazy"
                             />
                             <div class="caption d-none d-lg-block">
-                                <h6 class="mb-0 line-height">Bni Cyst</h6>
+                                <h6 class="mb-0 line-height">
+                                    {{ currentUser.name }}
+                                </h6>
                             </div>
                         </a>
                         <div
@@ -1860,3 +1862,15 @@
     </footer>
     <!-- Live Customizer start -->
 </template>
+
+<script setup>
+import { computed, onMounted } from "vue";
+import store from "../store";
+
+const currentUser = computed(() => store.state.user);
+
+onMounted(() => {
+    store.dispatch("getUser");
+});
+
+</script>

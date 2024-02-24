@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Symfony\Component\HttpFoundation\Response;
@@ -41,5 +42,9 @@ class AuthController extends Controller
         ]);
 
         return response($user, Response::HTTP_CREATED);
+    }
+
+    public function getUser(Request $request){
+        return new UserResource($request->user());
     }
 }
