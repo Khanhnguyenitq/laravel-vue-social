@@ -1,234 +1,286 @@
 <template>
-    <div>
-        <div class="wrapper">
-            <section class="sign-in-page">
-                <div id="container-inside">
-                    <div id="circle-small"></div>
-                    <div id="circle-medium"></div>
-                    <div id="circle-large"></div>
-                    <div id="circle-xlarge"></div>
-                    <div id="circle-xxlarge"></div>
+    <div class="sm:flex">
+        <div
+            class="relative lg:w-[580px] md:w-96 w-full p-10 min-h-screen bg-white shadow-xl flex items-center pt-10 dark:bg-slate-900 z-10"
+        >
+            <div
+                class="w-full lg:max-w-sm mx-auto space-y-10"
+                uk-scrollspy="target: > *; cls: uk-animation-scale-up; delay: 100 ;repeat: true"
+            >
+                <!-- logo image-->
+                <a href="#">
+                    <img
+                        src="../assets/images/logo.png"
+                        class="w-28 absolute top-10 left-10 dark:hidden"
+                        alt=""
+                /></a>
+                <a href="#">
+                    <img
+                        src="../assets/images/logo-light.png"
+                        class="w-28 absolute top-10 left-10 hidden dark:!block"
+                        alt=""
+                /></a>
+
+                <!-- logo icon optional -->
+                <div class="hidden">
+                    <img
+                        class="w-12"
+                        src="../assets/images/logo-icon.png"
+                        alt="Socialite html template"
+                    />
                 </div>
-                <div class="container p-0">
-                    <div class="row no-gutters">
-                        <div class="col-md-6 text-center pt-5">
-                            <div class="sign-in-detail text-white">
-                                <a class="sign-in-logo mb-5" href="index.html"
-                                    ><img
-                                        src="../assets/images/logo-full.png"
-                                        class="img-fluid"
-                                        alt="logo"
-                                        loading="lazy"
-                                /></a>
-                                <div class="sign-slider overflow-hidden">
-                                    <ul
-                                        class="swiper-wrapper list-inline m-0 p-0"
-                                    >
-                                        <li class="swiper-slide">
-                                            <img
-                                                src="../assets/images/login/1.png"
-                                                class="img-fluid mb-4"
-                                                alt="logo"
-                                            />
-                                            <h4 class="mb-1 text-white">
-                                                Find new friends
-                                            </h4>
-                                            <p>
-                                                It is a long established fact
-                                                that a reader will be distracted
-                                                by the readable content.
-                                            </p>
-                                        </li>
-                                        <li class="swiper-slide">
-                                            <img
-                                                src="../assets/images/login/2.png"
-                                                class="img-fluid mb-4"
-                                                alt="logo"
-                                            />
-                                            <h4 class="mb-1 text-white">
-                                                Connect with the world
-                                            </h4>
-                                            <p>
-                                                It is a long established fact
-                                                that a reader will be distracted
-                                                by the readable content.
-                                            </p>
-                                        </li>
-                                        <li class="swiper-slide">
-                                            <img
-                                                src="../assets/images/login/3.png"
-                                                class="img-fluid mb-4"
-                                                alt="logo"
-                                            />
-                                            <h4 class="mb-1 text-white">
-                                                Create new events
-                                            </h4>
-                                            <p>
-                                                It is a long established fact
-                                                that a reader will be distracted
-                                                by the readable content.
-                                            </p>
-                                        </li>
-                                    </ul>
-                                </div>
+
+                <!-- title -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-1.5">
+                        Sign up to get started
+                    </h2>
+                    <p class="text-sm text-gray-700 font-normal">
+                        If you already have an account,
+                        <a href="form-login.html" class="text-blue-700"
+                            >Login here!</a
+                        >
+                    </p>
+                </div>
+
+                <!-- form -->
+                <form
+                    method="post"
+                    @submit.prevent="register"
+                    class="space-y-7 text-sm text-black font-medium dark:text-white"
+                    uk-scrollspy="target: > *; cls: uk-animation-scale-up; delay: 100 ;repeat: true"
+                >
+                    <div class="grid grid-cols-2 gap-4 gap-y-7">
+                        <!-- first name -->
+                        <div class="col-span-2">
+
+                            <label for="name" class="">Name</label>
+                            <div class="mt-2.5">
+                                <input
+                                    id="name"
+                                    type="text"
+                                    autofocus=""
+                                    placeholder="Name"
+                                    required=""
+                                    class="!w-full !rounded-lg !bg-transparent !shadow-sm !border-slate-200 dark:!border-slate-800 dark:!bg-white/5"
+                                    v-model="user.name"
+                                />
                             </div>
                         </div>
-                        <div class="col-md-6 bg-white pt-5 pt-5 pb-lg-0 pb-5">
-                            <div class="sign-in-from">
-                                <h1 class="mb-0">Sign Up</h1>
-                                <p>
-                                    Enter your email address and password to
-                                    access admin panel.
-                                </p>
-                                <form
-                                    class="mt-4"
-                                    @submit.prevent="register"
-                                    method="post"
-                                >
-                                    <div class="form-group">
-                                        <label
-                                            class="form-label"
-                                            for="exampleInput0"
-                                            >Name</label
-                                        >
-                                        <input
-                                            type="text"
-                                            class="form-control mb-0"
-                                            id="exampleInput0"
-                                            placeholder="Enter name"
-                                            v-model="user.name"
-                                        />
-                                    </div>
-                                    <div class="form-group">
-                                        <label
-                                            class="form-label"
-                                            for="exampleInputEmail2"
-                                            >Email address</label
-                                        >
-                                        <input
-                                            type="email"
-                                            class="form-control mb-0"
-                                            id="exampleInputEmail2"
-                                            placeholder="Enter email"
-                                            v-model="user.email"
-                                        />
-                                    </div>
-                                    <div class="form-group">
-                                        <label
-                                            class="form-label"
-                                            for="exampleInputPassword1"
-                                            >Password</label
-                                        >
-                                        <input
-                                            type="password"
-                                            class="form-control mb-0"
-                                            id="exampleInputPassword1"
-                                            placeholder="Password"
-                                            v-model="user.password"
-                                        />
-                                    </div>
-                                    <div class="form-group">
-                                        <label
-                                            class="form-label"
-                                            for="exampleInputPassword2"
-                                            >Password Confirm</label
-                                        >
-                                        <input
-                                            type="password"
-                                            class="form-control mb-0"
-                                            id="exampleInputPassword2"
-                                            placeholder="Password Confirm"
-                                            v-model="user.password_confirmation"
-                                        />
-                                    </div>
-                                    <div class="d-inline-block w-100">
-                                        <div
-                                            class="form-check d-inline-block mt-2 pt-1"
-                                        >
-                                            <input
-                                                type="checkbox"
-                                                class="form-check-input"
-                                                id="customCheck1"
-                                            />
-                                            <label
-                                                class="form-check-label"
-                                                for="customCheck1"
-                                                >I accept
-                                                <a href="#"
-                                                    >Terms and Conditions</a
-                                                ></label
-                                            >
-                                        </div>
-                                        <button
-                                            type="submit"
-                                            class="btn btn-primary float-end"
-                                        >
-                                            Sign Up
-                                        </button>
-                                    </div>
-                                    <div class="sign-info">
-                                        <span
-                                            class="dark-color d-inline-block line-height-2"
-                                            >Already Have Account ?
-                                            <a href="sign-in.html"
-                                                >Log In</a
-                                            ></span
-                                        >
-                                        <ul class="iq-social-media">
-                                            <li>
-                                                <a href="#"
-                                                    ><svg
-                                                        version="1.1"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width="16"
-                                                        viewBox="0 0 16 16"
-                                                        fill="currentColor"
-                                                    >
-                                                        <title>facebook</title>
-                                                        <path
-                                                            d="M15 16h-14c-0.553 0-1-0.447-1-1v-14c0-0.553 0.447-1 1-1h14c0.553 0 1 0.447 1 1v14c0 0.553-0.447 1-1 1zM14 2h-12v12h12v-12zM8 6c0-1.103 0.912-2 1.857-2h1.143v2h-1v1h1v2h-1v3h-2v-3h-1v-2h1v-1z"
-                                                        ></path>
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                    ><svg
-                                                        version="1.1"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width="16"
-                                                        viewBox="0 0 24 24"
-                                                        fill="currentColor"
-                                                    >
-                                                        <title>twitter</title>
-                                                        <path
-                                                            d="M20.833 5.262c-0.186 0.242-0.391 0.475-0.616 0.696-0.233 0.232-0.347 0.567-0.278 0.908 0.037 0.182 0.060 0.404 0.061 0.634 0 5.256-2.429 8.971-5.81 10.898-2.647 1.509-5.938 1.955-9.222 1.12 1.245-0.361 2.46-0.921 3.593-1.69 0.147-0.099 0.273-0.243 0.352-0.421 0.224-0.505-0.003-1.096-0.508-1.32-2.774-1.233-4.13-2.931-4.769-4.593-0.417-1.084-0.546-2.198-0.52-3.227 0.021-0.811 0.138-1.56 0.278-2.182 0.394 0.343 0.803 0.706 1.235 1.038 2.051 1.577 4.624 2.479 7.395 2.407 0.543-0.015 0.976-0.457 0.976-1v-1.011c-0.002-0.179 0.009-0.357 0.034-0.533 0.113-0.806 0.504-1.569 1.162-2.141 0.725-0.631 1.636-0.908 2.526-0.846s1.753 0.463 2.384 1.188c0.252 0.286 0.649 0.416 1.033 0.304 0.231-0.067 0.463-0.143 0.695-0.228zM22.424 2.183c-0.74 0.522-1.523 0.926-2.287 1.205-0.931-0.836-2.091-1.302-3.276-1.385-1.398-0.097-2.836 0.339-3.977 1.332-1.036 0.901-1.652 2.108-1.83 3.372-0.037 0.265-0.055 0.532-0.054 0.8-1.922-0.142-3.693-0.85-5.15-1.97-0.775-0.596-1.462-1.309-2.034-2.116-0.32-0.45-0.944-0.557-1.394-0.237-0.154 0.109-0.267 0.253-0.335 0.409 0 0-0.132 0.299-0.285 0.76-0.112 0.337-0.241 0.775-0.357 1.29-0.163 0.722-0.302 1.602-0.326 2.571-0.031 1.227 0.12 2.612 0.652 3.996 0.683 1.775 1.966 3.478 4.147 4.823-1.569 0.726-3.245 1.039-4.873 0.967-0.552-0.024-1.019 0.403-1.043 0.955-0.017 0.389 0.19 0.736 0.513 0.918 4.905 2.725 10.426 2.678 14.666 0.261 4.040-2.301 6.819-6.7 6.819-12.634-0.001-0.167-0.008-0.33-0.023-0.489 1.006-1.115 1.676-2.429 1.996-3.781 0.127-0.537-0.206-1.076-0.743-1.203-0.29-0.069-0.58-0.003-0.807 0.156z"
-                                                        ></path></svg
-                                                ></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                    ><svg
-                                                        version="1.1"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width="16"
-                                                        viewBox="0 0 24 28"
-                                                        fill="currentColor"
-                                                    >
-                                                        <title>instagram</title>
-                                                        <path
-                                                            d="M16 14c0-2.203-1.797-4-4-4s-4 1.797-4 4 1.797 4 4 4 4-1.797 4-4zM18.156 14c0 3.406-2.75 6.156-6.156 6.156s-6.156-2.75-6.156-6.156 2.75-6.156 6.156-6.156 6.156 2.75 6.156 6.156zM19.844 7.594c0 0.797-0.641 1.437-1.437 1.437s-1.437-0.641-1.437-1.437 0.641-1.437 1.437-1.437 1.437 0.641 1.437 1.437zM12 4.156c-1.75 0-5.5-0.141-7.078 0.484-0.547 0.219-0.953 0.484-1.375 0.906s-0.688 0.828-0.906 1.375c-0.625 1.578-0.484 5.328-0.484 7.078s-0.141 5.5 0.484 7.078c0.219 0.547 0.484 0.953 0.906 1.375s0.828 0.688 1.375 0.906c1.578 0.625 5.328 0.484 7.078 0.484s5.5 0.141 7.078-0.484c0.547-0.219 0.953-0.484 1.375-0.906s0.688-0.828 0.906-1.375c0.625-1.578 0.484-5.328 0.484-7.078s0.141-5.5-0.484-7.078c-0.219-0.547-0.484-0.953-0.906-1.375s-0.828-0.688-1.375-0.906c-1.578-0.625-5.328-0.484-7.078-0.484zM24 14c0 1.656 0.016 3.297-0.078 4.953-0.094 1.922-0.531 3.625-1.937 5.031s-3.109 1.844-5.031 1.937c-1.656 0.094-3.297 0.078-4.953 0.078s-3.297 0.016-4.953-0.078c-1.922-0.094-3.625-0.531-5.031-1.937s-1.844-3.109-1.937-5.031c-0.094-1.656-0.078-3.297-0.078-4.953s-0.016-3.297 0.078-4.953c0.094-1.922 0.531-3.625 1.937-5.031s3.109-1.844 5.031-1.937c1.656-0.094 3.297-0.078 4.953-0.078s3.297-0.016 4.953 0.078c1.922 0.094 3.625 0.531 5.031 1.937s1.844 3.109 1.937 5.031c0.094 1.656 0.078 3.297 0.078 4.953z"
-                                                        ></path></svg
-                                                ></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </form>
+
+                        <!-- email -->
+                        <div class="col-span-2">
+                            <label for="email" class="">Email address</label>
+                            <div class="mt-2.5">
+                                <input
+                                    id="email"
+                                    type="email"
+                                    placeholder="Email"
+                                    required=""
+                                    class="!w-full !rounded-lg !bg-transparent !shadow-sm !border-slate-200 dark:!border-slate-800 dark:!bg-white/5"
+                                    v-model="user.email"
+                                />
                             </div>
+                        </div>
+
+                        <!-- password -->
+                        <div>
+                            <label for="email" class="">Password</label>
+                            <div class="mt-2.5">
+                                <input
+                                    id="password"
+                                    type="password"
+                                    placeholder="***"
+                                    class="!w-full !rounded-lg !bg-transparent !shadow-sm !border-slate-200 dark:!border-slate-800 dark:!bg-white/5"
+                                    v-model="user.password"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div>
+                            <label for="email" class="">Confirm Password</label>
+                            <div class="mt-2.5">
+                                <input
+                                    id="password_confirm"
+                                    name="password"
+                                    type="password"
+                                    placeholder="***"
+                                    class="!w-full !rounded-lg !bg-transparent !shadow-sm !border-slate-200 dark:!border-slate-800 dark:!bg-white/5"
+                                    v-model="user.password_confirmation"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="col-span-2">
+                            <label
+                                class="inline-flex items-center"
+                                id="rememberme"
+                            >
+                                <input
+                                    type="checkbox"
+                                    id="accept-terms"
+                                    class="!rounded-md accent-red-800"
+                                />
+                                <span class="ml-2"
+                                    >you agree to our
+                                    <a
+                                        href="#"
+                                        class="text-blue-700 hover:underline"
+                                        >terms of use
+                                    </a>
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- submit button -->
+                        <div class="col-span-2">
+                            <button
+                                type="submit"
+                                class="button bg-primary text-white w-full"
+                            >
+                                Get Started
+                            </button>
                         </div>
                     </div>
+
+                    <div class="text-center flex items-center gap-6">
+                        <hr
+                            class="flex-1 border-slate-200 dark:border-slate-800"
+                        />
+                        Or continue with
+                        <hr
+                            class="flex-1 border-slate-200 dark:border-slate-800"
+                        />
+                    </div>
+
+                    <!-- social login -->
+                    <div
+                        class="flex gap-2"
+                        uk-scrollspy="target: > *; cls: uk-animation-scale-up; delay: 400 ;repeat: true"
+                    >
+                        <a
+                            href="#"
+                            class="button flex-1 flex items-center gap-2 bg-primary text-white text-sm"
+                        >
+                            <!-- <ion-icon
+                                name="logo-facebook"
+                                class="text-lg"
+                            ></ion-icon> -->
+                            facebook
+                        </a>
+                        <a
+                            href="#"
+                            class="button flex-1 flex items-center gap-2 bg-sky-600 text-white text-sm"
+                        >
+                            <!-- <ion-icon name="logo-twitter"></ion-icon>  -->
+                            twitter
+                        </a>
+                        <a
+                            href="#"
+                            class="button flex-1 flex items-center gap-2 bg-black text-white text-sm"
+                        >
+                            <!-- <ion-icon name="logo-github"></ion-icon>  -->
+                            github
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- image slider -->
+        <div class="flex-1 relative bg-primary max-md:hidden">
+            <div
+                class="relative w-full h-full"
+                tabindex="-1"
+                uk-slideshow="animation: slide; autoplay: true"
+            >
+                <ul class="uk-slideshow-items w-full h-full">
+                    <li class="w-full">
+                        <img
+                            src="../assets/images/post/img-3.jpg"
+                            alt=""
+                            class="w-full h-full object-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left"
+                        />
+                        <div
+                            class="absolute bottom-0 w-full uk-tr ansition-slide-bottom-small z-10"
+                        >
+                            <div
+                                class="max-w-xl w-full mx-auto pb-32 px-5 z-30 relative"
+                                uk-scrollspy="target: > *; cls: uk-animation-scale-up; delay: 100 ;repeat: true"
+                            >
+                                <img
+                                    class="w-12"
+                                    src="../assets/images/logo-icon.png"
+                                    alt="Socialite html template"
+                                />
+                                <h4
+                                    class="!text-white text-2xl font-semibold mt-7"
+                                    uk-slideshow-parallax="y: 600,0,0"
+                                >
+                                    Connect With Friends
+                                </h4>
+                                <p
+                                    class="!text-white text-lg mt-7 leading-8"
+                                    uk-slideshow-parallax="y: 800,0,0;"
+                                >
+                                    This phrase is more casual and playful. It
+                                    suggests that you are keeping your friends
+                                    updated on what’s happening in your life.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full h-96 bg-gradient-to-t from-black absolute bottom-0 left-0"
+                        ></div>
+                    </li>
+                    <li class="w-full">
+                        <img
+                            src="../assets/images/post/img-2.jpg"
+                            alt=""
+                            class="w-full h-full object-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left"
+                        />
+                        <div
+                            class="absolute bottom-0 w-full uk-tr ansition-slide-bottom-small z-10"
+                        >
+                            <div
+                                class="max-w-xl w-full mx-auto pb-32 px-5 z-30 relative"
+                                uk-scrollspy="target: > *; cls: uk-animation-scale-up; delay: 100 ;repeat: true"
+                            >
+                                <img
+                                    class="w-12"
+                                    src="../assets/images/logo-icon.png"
+                                    alt="Socialite html template"
+                                />
+                                <h4
+                                    class="!text-white text-2xl font-semibold mt-7"
+                                    uk-slideshow-parallax="y: 800,0,0"
+                                >
+                                    Connect With Friends
+                                </h4>
+                                <p
+                                    class="!text-white text-lg mt-7 leading-8"
+                                    uk-slideshow-parallax="y: 800,0,0;"
+                                >
+                                    This phrase is more casual and playful. It
+                                    suggests that you are keeping your friends
+                                    updated on what’s happening in your life.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full h-96 bg-gradient-to-t from-black absolute bottom-0 left-0"
+                        ></div>
+                    </li>
+                </ul>
+
+                <!-- slide nav -->
+                <div class="flex justify-center">
+                    <ul
+                        class="inline-flex flex-wrap justify-center absolute bottom-8 gap-1.5 uk-dotnav uk-slideshow-nav"
+                    ></ul>
                 </div>
-            </section>
+            </div>
         </div>
     </div>
 </template>
