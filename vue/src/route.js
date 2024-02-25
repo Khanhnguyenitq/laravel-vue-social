@@ -1,16 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
+import AppLayout from "./components/AppLayout.vue";
 import store from "./store";
-import Home from "./views/HomeView.vue";
 import Login from "./views/auth/Login.vue";
 import Register from "./views/auth/Register.vue";
+// import HomeView from "./views/auth/HomeView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
             path: "/",
-            name: "home",
-            component: Home,
+            name: "app",
+            component: AppLayout,
             meta: {
                 requiresAuth: true,
             },
@@ -38,7 +39,7 @@ router.beforeEach((to, from, next) => {
     if (to.meta.requiresAuth && !store.state.token) {
         next({ name: "login" });
     } else if (to.meta.requiresGuest && store.state.token) {
-        next({ name: "home" });
+        next({ name: "app" });
     } else {
         next();
     }

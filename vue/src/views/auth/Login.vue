@@ -263,7 +263,7 @@ function login() {
     store
         .dispatch("login", user)
         .then(() => {
-            router.push({ name: "home" });
+            router.push({ name: "app" });
         })
         .catch(({ response }) => {
             errorMsg.value = response.data.message;

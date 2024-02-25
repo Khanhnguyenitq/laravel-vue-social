@@ -21,6 +21,7 @@ const store = createStore({
         LOGOUT(state) {
             state.user = null;
             state.token = null;
+            sessionStorage.removeItem("TOKEN");
         },
     },
     actions: {

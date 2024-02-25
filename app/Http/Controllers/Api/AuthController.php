@@ -44,6 +44,11 @@ class AuthController extends Controller
         return response($user, Response::HTTP_CREATED);
     }
 
+    public function logout(Request $request){
+        $request->user()->token()->revoke();
+        return response(['message'=> 'Logout successfully']);
+    }
+
     public function getUser(Request $request){
         return new UserResource($request->user());
     }

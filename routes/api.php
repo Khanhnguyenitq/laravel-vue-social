@@ -16,7 +16,8 @@ use App\Http\Controllers\Api\AuthController;
 */
 
 Route::middleware(['auth:api'])->group(function () {
-    Route::get('/user', [AuthController::class, 'getUser']);
+    Route::get('user', [AuthController::class, 'getUser']);
+    Route::post('logout', [AuthController::class, 'logout']);
 });
 
 Route::post('login', [AuthController::class, 'login']);
