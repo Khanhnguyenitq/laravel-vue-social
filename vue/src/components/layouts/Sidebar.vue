@@ -15,7 +15,7 @@
                         <li class="active">
                             <a href="feed.html">
                                 <img
-                                    src="../assets/images/icons/home.png"
+                                    src="../../assets/images/icons/home.png"
                                     alt="feeds"
                                     class="w-6"
                                 />
@@ -25,7 +25,7 @@
                         <li>
                             <a href="messages.html">
                                 <img
-                                    src="../assets/images/icons/message.png"
+                                    src="../../assets/images/icons/message.png"
                                     alt="messages"
                                     class="w-5"
                                 />
@@ -35,7 +35,7 @@
                         <li>
                             <a href="video.html">
                                 <img
-                                    src="../assets/images/icons/video.png"
+                                    src="../../assets/images/icons/video.png"
                                     alt="messages"
                                     class="w-6"
                                 />
@@ -45,7 +45,7 @@
                         <li>
                             <a href="event.html">
                                 <img
-                                    src="../assets/images/icons/event.png"
+                                    src="../../assets/images/icons/event.png"
                                     alt="messages"
                                     class="w-6"
                                 />
@@ -55,7 +55,7 @@
                         <li>
                             <a href="pages.html">
                                 <img
-                                    src="../assets/images/icons/page.png"
+                                    src="../../assets/images/icons/page.png"
                                     alt="pages"
                                     class="w-6"
                                 />
@@ -65,7 +65,7 @@
                         <li>
                             <a href="groups.html">
                                 <img
-                                    src="../assets/images/icons/group.png"
+                                    src="../../assets/images/icons/group.png"
                                     alt="groups"
                                     class="w-6"
                                 />
@@ -75,7 +75,7 @@
                         <li>
                             <a href="market.html">
                                 <img
-                                    src="../assets/images/icons/market.png"
+                                    src="../../assets/images/icons/market.png"
                                     alt="market"
                                     class="w-7 -ml-1"
                                 />
@@ -85,7 +85,7 @@
                         <li>
                             <a href="blog.html">
                                 <img
-                                    src="../assets/images/icons/blog.png"
+                                    src="../../assets/images/icons/blog.png"
                                     alt="blog"
                                     class="w-6"
                                 />
@@ -95,7 +95,7 @@
                         <li class="!hidden" id="show__more">
                             <a href="games.html">
                                 <img
-                                    src="../assets/images/icons/game.png"
+                                    src="../../assets/images/icons/game.png"
                                     alt="games"
                                     class="w-6"
                                 />
@@ -105,7 +105,7 @@
                         <li class="!hidden" id="show__more">
                             <a href="funding.html">
                                 <img
-                                    src="../assets/images/icons/fund.png"
+                                    src="../../assets/images/icons/fund.png"
                                     alt="messages"
                                     class="w-6"
                                 />
@@ -115,7 +115,7 @@
                         <li class="!hidden" id="show__more">
                             <a href="blog-2.html">
                                 <img
-                                    src="../assets/images/icons/blog-2.png"
+                                    src="../../assets/images/icons/blog-2.png"
                                     alt="blog"
                                     class="w-6"
                                 />
@@ -125,7 +125,7 @@
                         <li class="!hidden" id="show__more">
                             <a href="event-2.html">
                                 <img
-                                    src="../assets/images/icons/event-2.png"
+                                    src="../../assets/images/icons/event-2.png"
                                     alt="event"
                                     class="w-6"
                                 />
@@ -135,7 +135,7 @@
                         <li class="!hidden" id="show__more">
                             <a href="groups-2.html">
                                 <img
-                                    src="../assets/images/icons/group-2.png"
+                                    src="../../assets/images/icons/group-2.png"
                                     alt="groups"
                                     class="w-6"
                                 />
@@ -177,7 +177,7 @@
                             class="flex items-center gap-2 p-3 px-4 rounded-xl hover:bg-secondery"
                         >
                             <img
-                                src="../assets/images/avatars/avatar-2.jpg"
+                                src="../../assets/images/avatars/avatar-2.jpg"
                                 alt=""
                                 class="w-6 rounded-full object-cover"
                             />
@@ -189,7 +189,7 @@
                             class="flex items-center gap-2 p-3 px-4 rounded-xl hover:bg-secondery"
                         >
                             <img
-                                src="../assets/images/avatars/avatar-7.jpg"
+                                src="../../assets/images/avatars/avatar-7.jpg"
                                 alt=""
                                 class="w-6 rounded-full object-cover"
                             />
@@ -201,7 +201,7 @@
                             class="flex items-center gap-2 p-3 px-4 rounded-xl hover:bg-secondery"
                         >
                             <img
-                                src="../assets/images/avatars/avatar-3.jpg"
+                                src="../../assets/images/avatars/avatar-3.jpg"
                                 alt=""
                                 class="w-6 rounded-full object-cover"
                             />

@@ -24,22 +24,22 @@
                     <div id="logo">
                         <a href="feed.html">
                             <img
-                                src="../assets/images/logo.png"
+                                src="../../assets/images/logo.png"
                                 alt=""
                                 class="w-28 md:block hidden dark:!hidden"
                             />
                             <img
-                                src="../assets/images/logo-light.png"
+                                src="../../assets/images/logo-light.png"
                                 alt=""
                                 class="dark:md:block hidden"
                             />
                             <img
-                                src="../assets/images/logo-mobile.png"
+                                src="../../assets/images/logo-mobile.png"
                                 class="hidden max-md:block w-20 dark:!hidden"
                                 alt=""
                             />
                             <img
-                                src="../assets/images/logo-mobile-light.png"
+                                src="../../assets/images/logo-mobile-light.png"
                                 class="hidden dark:max-md:block w-20"
                                 alt=""
                             />
@@ -90,7 +90,7 @@
                                     class="relative px-3 py-1.5 flex items-center gap-4 hover:bg-secondery rounded-lg dark:hover:bg-white/10"
                                 >
                                     <img
-                                        src="../assets/images/avatars/avatar-2.jpg"
+                                        src="../../assets/images/avatars/avatar-2.jpg"
                                         class="w-9 h-9 rounded-full"
                                     />
                                     <div>
@@ -111,7 +111,7 @@
                                     class="relative px-3 py-1.5 flex items-center gap-4 hover:bg-secondery rounded-lg dark:hover:bg-white/10"
                                 >
                                     <img
-                                        src="../assets/images/avatars/avatar-2.jpg"
+                                        src="../../assets/images/avatars/avatar-2.jpg"
                                         class="w-9 h-9 rounded-full"
                                     />
                                     <div>
@@ -132,7 +132,7 @@
                                     class="relative px-3 py-1.5 flex items-center gap-4 hover:bg-secondery rounded-lg dark:hover:bg-white/10"
                                 >
                                     <img
-                                        src="../assets/images/group/group-2.jpg"
+                                        src="../../assets/images/group/group-2.jpg"
                                         class="w-9 h-9 rounded-full"
                                     />
                                     <div>
@@ -153,7 +153,7 @@
                                     class="relative px-3 py-1.5 flex items-center gap-4 hover:bg-secondery rounded-lg dark:hover:bg-white/10"
                                 >
                                     <img
-                                        src="../assets/images/group/group-1.jpg"
+                                        src="../../assets/images/group/group-1.jpg"
                                         class="w-9 h-9 rounded-full"
                                     />
                                     <div>
@@ -174,7 +174,7 @@
                                     class="relative px-3 py-1.5 flex items-center gap-4 hover:bg-secondery rounded-lg dark:hover:bg-white/10"
                                 >
                                     <img
-                                        src="../assets/images/avatars/avatar-6.jpg"
+                                        src="../../assets/images/avatars/avatar-6.jpg"
                                         class="w-9 h-9 rounded-full"
                                     />
                                     <div>
@@ -398,7 +398,7 @@
                                     class="flex items-center gap-4 hover:bg-secondery rounded-md p-1.5 cursor-pointer dark:hover:bg-white/10"
                                 >
                                     <img
-                                        src="../assets/images/icons/group.png"
+                                        src="../../assets/images/icons/group.png"
                                         alt=""
                                         class="w-7"
                                     />
@@ -421,7 +421,7 @@
                                     class="flex items-center gap-4 hover:bg-secondery rounded-md p-1.5 cursor-pointer dark:hover:bg-white/10"
                                 >
                                     <img
-                                        src="../assets/images/icons/page.png"
+                                        src="../../assets/images/icons/page.png"
                                         alt=""
                                         class="w-7"
                                     />
@@ -442,7 +442,7 @@
                                     class="flex items-center gap-4 hover:bg-secondery rounded-md p-1.5 cursor-pointer dark:hover:bg-white/10"
                                 >
                                     <img
-                                        src="../assets/images/icons/event.png"
+                                        src="../../assets/images/icons/event.png"
                                         class="w-7"
                                     />
                                     <div class="flex-1">
@@ -462,7 +462,7 @@
                                     class="flex items-center gap-4 hover:bg-secondery rounded-md p-1.5 cursor-pointer dark:hover:bg-white/10"
                                 >
                                     <img
-                                        src="../assets/images/icons/market.png"
+                                        src="../../assets/images/icons/market.png"
                                         class="w-8 -ml-1"
                                     />
                                     <div class="flex-1">
@@ -482,7 +482,7 @@
                                     class="flex items-center gap-4 hover:bg-secondery rounded-md p-1.5 cursor-pointer dark:hover:bg-white/10"
                                 >
                                     <img
-                                        src="../assets/images/icons/game.png"
+                                        src="../../assets/images/icons/game.png"
                                         alt=""
                                         class="w-7"
                                     />
@@ -599,7 +599,7 @@
                                             class="relative w-12 h-12 shrink-0"
                                         >
                                             <img
-                                                src="../assets/images/avatars/avatar-3.jpg"
+                                                src="../../assets/images/avatars/avatar-3.jpg"
                                                 alt=""
                                                 class="object-cover w-full h-full rounded-full"
                                             />
@@ -630,7 +630,7 @@
                                             class="relative w-12 h-12 shrink-0"
                                         >
                                             <img
-                                                src="../assets/images/avatars/avatar-7.jpg"
+                                                src="../../assets/images/avatars/avatar-7.jpg"
                                                 alt=""
                                                 class="object-cover w-full h-full rounded-full"
                                             />
@@ -658,7 +658,7 @@
                                             class="relative w-12 h-12 shrink-0"
                                         >
                                             <img
-                                                src="../assets/images/avatars/avatar-6.jpg"
+                                                src="../../assets/images/avatars/avatar-6.jpg"
                                                 alt=""
                                                 class="object-cover w-full h-full rounded-full"
                                             />
@@ -686,7 +686,7 @@
                                             class="relative w-12 h-12 shrink-0"
                                         >
                                             <img
-                                                src="../assets/images/avatars/avatar-2.jpg"
+                                                src="../../assets/images/avatars/avatar-2.jpg"
                                                 alt=""
                                                 class="object-cover w-full h-full rounded-full"
                                             />
@@ -720,7 +720,7 @@
                                             class="relative w-12 h-12 shrink-0"
                                         >
                                             <img
-                                                src="../assets/images/avatars/avatar-3.jpg"
+                                                src="../../assets/images/avatars/avatar-3.jpg"
                                                 alt=""
                                                 class="object-cover w-full h-full rounded-full"
                                             />
@@ -751,7 +751,7 @@
                                             class="relative w-12 h-12 shrink-0"
                                         >
                                             <img
-                                                src="../assets/images/avatars/avatar-4.jpg"
+                                                src="../../assets/images/avatars/avatar-4.jpg"
                                                 alt=""
                                                 class="object-cover w-full h-full rounded-full"
                                             />
@@ -780,7 +780,7 @@
                                             class="relative w-12 h-12 shrink-0"
                                         >
                                             <img
-                                                src="../assets/images/avatars/avatar-2.jpg"
+                                                src="../../assets/images/avatars/avatar-2.jpg"
                                                 alt=""
                                                 class="object-cover w-full h-full rounded-full"
                                             />
@@ -808,7 +808,7 @@
                                             class="relative w-12 h-12 shrink-0"
                                         >
                                             <img
-                                                src="../assets/images/avatars/avatar-7.jpg"
+                                                src="../../assets/images/avatars/avatar-7.jpg"
                                                 alt=""
                                                 class="object-cover w-full h-full rounded-full"
                                             />
@@ -908,7 +908,7 @@
                                             class="relative w-10 h-10 shrink-0"
                                         >
                                             <img
-                                                src="../assets/images/avatars/avatar-2.jpg"
+                                                src="../../assets/images/avatars/avatar-2.jpg"
                                                 alt=""
                                                 class="object-cover w-full h-full rounded-full"
                                             />
@@ -946,7 +946,7 @@
                                             class="relative w-10 h-10 shrink-0"
                                         >
                                             <img
-                                                src="../assets/images/avatars/avatar-4.jpg"
+                                                src="../../assets/images/avatars/avatar-4.jpg"
                                                 alt=""
                                                 class="object-cover w-full h-full rounded-full"
                                             />
@@ -981,7 +981,7 @@
                                             class="relative w-10 h-10 shrink-0"
                                         >
                                             <img
-                                                src="../assets/images/avatars/avatar-5.jpg"
+                                                src="../../assets/images/avatars/avatar-5.jpg"
                                                 alt=""
                                                 class="object-cover w-full h-full rounded-full"
                                             />
@@ -1016,7 +1016,7 @@
                                             class="relative w-10 h-10 shrink-0"
                                         >
                                             <img
-                                                src="../assets/images/avatars/avatar-3.jpg"
+                                                src="../../assets/images/avatars/avatar-3.jpg"
                                                 alt=""
                                                 class="object-cover w-full h-full rounded-full"
                                             />
@@ -1054,7 +1054,7 @@
                                             class="relative w-10 h-10 shrink-0"
                                         >
                                             <img
-                                                src="../assets/images/avatars/avatar-7.jpg"
+                                                src="../../assets/images/avatars/avatar-7.jpg"
                                                 alt=""
                                                 class="object-cover w-full h-full rounded-full"
                                             />
@@ -1090,7 +1090,7 @@
                                             class="relative w-10 h-10 shrink-0"
                                         >
                                             <img
-                                                src="../assets/images/avatars/avatar-4.jpg"
+                                                src="../../assets/images/avatars/avatar-4.jpg"
                                                 alt=""
                                                 class="object-cover w-full h-full rounded-full"
                                             />
@@ -1139,7 +1139,7 @@
                             class="rounded-full relative bg-secondery cursor-pointer shrink-0"
                         >
                             <img
-                                src="../assets/images/avatars/avatar-2.jpg"
+                                src="../../assets/images/avatars/avatar-2.jpg"
                                 alt=""
                                 class="sm:w-9 sm:h-9 w-7 h-7 rounded-full shadow shrink-0"
                             />
@@ -1151,7 +1151,7 @@
                             <a href="timeline.html">
                                 <div class="p-4 py-5 flex items-center gap-4">
                                     <img
-                                        src="../assets/images/avatars/avatar-2.jpg"
+                                        src="../../assets/images/avatars/avatar-2.jpg"
                                         alt=""
                                         class="w-10 h-10 rounded-full shadow"
                                     />
@@ -1318,7 +1318,7 @@
 
                         <div class="flex items-center gap-2 hidden">
                             <img
-                                src="../assets/images/avatars/avatar-2.jpg"
+                                src="../../assets/images/avatars/avatar-2.jpg"
                                 alt=""
                                 class="w-9 h-9 rounded-full shadow"
                             />
@@ -1349,8 +1349,8 @@
     </header>
 </template>
 <script setup>
-import store from "../store";
-import router from "../route.js";
+import store from "../../store";
+import router from "../../route.js";
 import { computed } from "vue";
 
 const currentUser = computed(() => store.state.user);

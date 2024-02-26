@@ -636,11 +636,11 @@ body {
 
 input[type='text'],
     input[type='password'],
-    input[type='email'], 
+    input[type='email'],
     input[type='number'],
     input[type='url'],
     input[type='date'],
-    select, 
+    select,
     textarea {
   border-radius: 0.375rem;
   padding-top: 0.5rem;
@@ -661,11 +661,11 @@ input[type='text']::-moz-placeholder, input[type='password']::-moz-placeholder, 
 
 input[type='text']::placeholder,
     input[type='password']::placeholder,
-    input[type='email']::placeholder, 
+    input[type='email']::placeholder,
     input[type='number']::placeholder,
     input[type='url']::placeholder,
     input[type='date']::placeholder,
-    select::placeholder, 
+    select::placeholder,
     textarea::placeholder {
   --tw-text-opacity: 1 !important;
   color: rgb(75 85 99 / var(--tw-text-opacity)) !important;
@@ -674,11 +674,11 @@ input[type='text']::placeholder,
 @media (prefers-color-scheme: dark) {
   input[type='text'],
     input[type='password'],
-    input[type='email'], 
+    input[type='email'],
     input[type='number'],
     input[type='url'],
     input[type='date'],
-    select, 
+    select,
     textarea {
     color: rgb(255 255 255 / 0.9) !important;
   }
@@ -689,11 +689,11 @@ input[type='text']::placeholder,
 
   input[type='text']::placeholder,
     input[type='password']::placeholder,
-    input[type='email']::placeholder, 
+    input[type='email']::placeholder,
     input[type='number']::placeholder,
     input[type='url']::placeholder,
     input[type='date']::placeholder,
-    select::placeholder, 
+    select::placeholder,
     textarea::placeholder {
     color: rgb(255 255 255 / 0.9) !important;
   }
@@ -1115,7 +1115,7 @@ input:checked + .switch-button {
   }
 }
 
-.uk-dotnav > * > :hover ,   
+.uk-dotnav > * > :hover ,
     .uk-dotnav > * > :active ,
     .uk-dotnav > .uk-active > * {
   --tw-bg-opacity: 1;
@@ -1123,7 +1123,7 @@ input:checked + .switch-button {
 }
 
 @media (prefers-color-scheme: dark) {
-  .uk-dotnav > * > :hover ,   
+  .uk-dotnav > * > :hover ,
     .uk-dotnav > * > :active ,
     .uk-dotnav > .uk-active > * {
     background-color: rgb(255 255 255 / 0.9);
@@ -1402,9 +1402,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 1.5rem !important;
 }
 
-#side a.active svg , 
+#side a.active svg ,
     #side a.uk-active svg ,
-    #side .active  a , 
+    #side .active  a ,
     #side a.uk-active {
   --tw-bg-opacity: 1;
   background-color: rgb(var(--color-secondery) / var(--tw-bg-opacity));
@@ -1413,9 +1413,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (prefers-color-scheme: dark) {
-  #side a.active svg , 
+  #side a.active svg ,
     #side a.uk-active svg ,
-    #side .active  a , 
+    #side .active  a ,
     #side a.uk-active {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1789,7 +1789,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 0.5rem;
 }
 
-.page-heading .page-nav ul li.uk-active a,  
+.page-heading .page-nav ul li.uk-active a,
     .page-heading .page-nav ul li.active a {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -1798,7 +1798,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (prefers-color-scheme: dark) {
-  .page-heading .page-nav ul li.uk-active a,  
+  .page-heading .page-nav ul li.uk-active a,
     .page-heading .page-nav ul li.active a {
     --tw-border-opacity: 1;
     border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -8303,3 +8303,19 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cursor-not-allowed {
+    cursor: not-allowed;
+}

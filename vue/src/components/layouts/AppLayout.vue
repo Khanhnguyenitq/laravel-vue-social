@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import store from "../store/index.js";
+import store from "../../store/index.js";
 import Sidebar from "./Sidebar.vue";
 import TopHeader from "./TopHeader.vue";
 import { onMounted } from "vue";

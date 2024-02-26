@@ -37,8 +37,10 @@
                     </h2>
                     <p class="text-sm text-gray-700 font-normal">
                         If you haven’t signed up yet.
-                        <a href="form-register.html" class="text-blue-700"
-                            >Register here!</a
+                        <a href="#" class="text-blue-700"
+                            ><router-link :to="{ name: 'register' }"
+                                >Register here!</router-link
+                            ></a
                         >
                     </p>
                 </div>
@@ -57,18 +59,20 @@
                             <input
                                 id="email"
                                 name="email"
-                                type="email"
+                                type="text"
                                 autofocus=""
                                 placeholder="Email"
-                                required=""
                                 class="!w-full !rounded-lg !bg-transparent !shadow-sm !border-slate-200 dark:!border-slate-800 dark:!bg-white/5"
                                 v-model="user.email"
                             />
+                            <p class="text-red-500" v-if="validation.email">
+                                {{ validation.email }}
+                            </p>
                         </div>
                     </div>
                     <!-- password -->
                     <div>
-                        <label for="email" class="">Password</label>
+                        <label for="password" class="">Password</label>
                         <div class="mt-2.5">
                             <input
                                 id="password"
@@ -78,17 +82,21 @@
                                 class="!w-full !rounded-lg !bg-transparent !shadow-sm !border-slate-200 dark:!border-slate-800 dark:!bg-white/5"
                                 v-model="user.password"
                             />
+                            <p class="text-red-500" v-if="validation">
+                                {{ validation.password }}
+                            </p>
                         </div>
                     </div>
 
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-2.5">
                             <input
-                                id="rememberme"
-                                name="rememberme"
+                                id="remember-me"
+                                name="remember-me"
                                 type="checkbox"
+                                v-model="user.remember"
                             />
-                            <label for="rememberme" class="font-normal"
+                            <label for="remember-me" class="font-normal"
                                 >Remember me</label
                             >
                         </div>
@@ -99,10 +107,39 @@
                     <div>
                         <button
                             type="submit"
+                            :disabled="loading"
                             class="button bg-primary text-white w-full"
+                            :class="{
+                                'cursor-not-allowed': loading,
+                            }"
                         >
+                            <span v-if="loading">
+                                <svg
+                                    class="animate-spin h-5 w-5 mr-3 text-white"
+                                    viewBox="0 0 100 100"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill="#fff"
+                                        d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
+                                    >
+                                        <animateTransform
+                                            attributeName="transform"
+                                            attributeType="XML"
+                                            type="rotate"
+                                            dur="1s"
+                                            from="0 50 50"
+                                            to="360 50 50"
+                                            repeatCount="indefinite"
+                                        />
+                                    </path>
+                                </svg>
+                            </span>
                             Sign in
                         </button>
+                        <p v-if="errorMsg" class="text-red-500">
+                            {{ errorMsg }}
+                        </p>
                     </div>
 
                     <div class="text-center flex items-center gap-6">
@@ -252,22 +289,42 @@ import store from "../../store/index.js";
 import { ref } from "vue";
 import router from "../../route.js";
 
+let validation = ref("");
+let loading = ref(false);
 let errorMsg = ref("");
 
 const user = reactive({
     email: "",
     password: "",
+    remember: false,
 });
 
 function login() {
+    loading.value = true;
+    validation.value = "";
+    errorMsg.value = "";
     store
         .dispatch("login", user)
         .then(() => {
+            loading.value = false;
             router.push({ name: "app" });
         })
         .catch(({ response }) => {
-            errorMsg.value = response.data.message;
-            console.log(errorMsg.value);
+            if (response.data.errors) {
+                validation.value = {
+                    email: Array.isArray(response.data.errors?.email)
+                        ? response.data.errors.email.join(" ")
+                        : "",
+                    password: Array.isArray(response.data.errors?.password)
+                        ? response.data.errors.password.join(" ")
+                        : "",
+                };
+            } else {
+                errorMsg.value = response.data.message || "An error occurred.";
+            }
+        })
+        .finally(() => {
+            loading.value = false;
         });
 }
 </script>

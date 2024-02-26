@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -12,9 +13,12 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-        if (auth()->attempt($request->all())) {
+        $credentials = $request->only('email', 'password');
+        $remember = $request->has('remember') ? true : false;
+
+        if (auth()->attempt($credentials, $remember)) {
             return response([
                 'user' => auth()->user(),
                 'access_token' => auth()->user()->createToken('authToken')->accessToken
@@ -23,7 +27,7 @@ class AuthController extends Controller
 
 
         return response([
-            'message' => 'This User does not exist'
+            'message' => 'Người dùng không tồn tại'
         ], Response::HTTP_UNAUTHORIZED);
     }
 
@@ -44,12 +48,14 @@ class AuthController extends Controller
         return response($user, Response::HTTP_CREATED);
     }
 
-    public function logout(Request $request){
+    public function logout(Request $request)
+    {
         $request->user()->token()->revoke();
-        return response(['message'=> 'Logout successfully']);
+        return response(['message' => 'Đăng xuất thành công']);
     }
 
-    public function getUser(Request $request){
+    public function getUser(Request $request)
+    {
         return new UserResource($request->user());
     }
 }
