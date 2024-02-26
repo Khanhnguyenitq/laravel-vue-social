@@ -35,7 +35,7 @@ const store = createStore({
                 commit("SET_USER", user);
                 commit("SET_TOKEN", token);
             } catch (error) {
-                console.error("Registration failed:", error);
+                // console.error("Registration failed:", error);
                 throw error;
             }
         },
@@ -47,7 +47,7 @@ const store = createStore({
                 commit("SET_USER", user);
                 commit("SET_TOKEN", access_token);
             } catch (error) {
-                console.error("Lỗi đăng nhập:", error);
+                // console.error("Lỗi đăng nhập:", error);
                 throw error;
             }
         },
@@ -66,7 +66,8 @@ const store = createStore({
                 await axiosClient.post("/logout");
                 commit("LOGOUT");
             } catch (error) {
-                console.error("Lỗi đăng xuất:", error);
+                // console.error("Lỗi đăng xuất:", error);
+                throw error;
             }
         },
     },
